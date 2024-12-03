@@ -6,8 +6,41 @@
     <title>Add comment</title>
     <style>
         body{
-            justify-items: center;
-            align-items: center;
+            background-color: gray;
+        }
+
+        h1{
+            background-color: limegreen;
+            width: fit-content;
+            margin: 50px auto;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .para-container{
+            gap: 200px;
+        }
+        p{
+            color: white;
+        }
+        button:hover{
+            background-color: lime;
+            transition-duration: unset;
+            cursor: pointer;
+        }
+        button{
+            padding: 10px 50px;
+            background-color: pink;
+            border-radius: 5px;
+            border: none;
+            margin-top: 30px;
+        }
+        .text-container{
+            width: fit-content;
+            margin: 50px auto;
+        }
+        .text-area{
+            border: none;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -16,6 +49,34 @@
          <div>
              <h1>Add a comments in a website</h1>
          </div>
+         <div class="para-container main-sec">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores reprehenderit fugiat tempora ipsa culpa sequi, aut nam explicabo adipisci odit reiciendis voluptatibus vero! Facere, molestias dignissimos unde id atque quaerat est soluta quia iste natus officiis excepturi nostrum, dicta voluptate ratione, temporibus ad consequatur a corrupti velit dolore debitis vitae?</p>
+            <p>Id amet eaque sit numquam cupiditate voluptate ratione ex iusto dicta, autem, debitis eum earum saepe ipsam unde. Sit nulla illum facilis accusantium necessitatibus nemo quas ab, error quo iste repellendus laboriosam! Sed aperiam neque quo tempore. Quod, suscipit ad. Tenetur illo voluptates molestias labore aperiam odit ducimus placeat quidem?</p>
+            <p>Ex cumque assumenda esse, facere asperiores omnis natus beatae ipsam dolorum praesentium iusto, nesciunt illo voluptatibus, mollitia animi iure soluta quos nobis. Hic rerum alias eos, iure saepe delectus ipsam non eius incidunt provident harum aliquid ea quaerat est in vero dicta labore suscipit laudantium voluptates, soluta accusantium consectetur illo.</p>
+         </div>
+         <div class="text-container">
+             <textarea class="text-area" name="" id="" cols="50" rows="10"></textarea>
+             <br>
+             <button class="main-btn">Click Now</button>
+         </div>
     </section>
+    <script>
+        /* btn addevenlistener added */
+          document.querySelector('.main-btn').addEventListener('click', function(){
+            /* text-area can added and value set on the btn*/
+            const textArea = document.querySelector('.text-area');
+            const textValue = textArea.value ;
+            /* push on the text-area text, that parent tag added */
+            const pushcomment = document.querySelector('.main-sec');
+            /* parent tag child created */
+            const creatP = document.createElement('p');
+            /* text-area text add on the parent child p */
+            creatP.innerText = textValue;
+            /* click to the btn push on the comment  */
+            pushcomment.appendChild(creatP);
+            /* clear a textarea */
+            textArea.value = '';
+          })
+    </script>
 </body>
 </html>
